@@ -95,7 +95,7 @@ export default function Navbar() {
               className={`flex items-center gap-2 text-sm font-semibold ${scrolled ? 'text-foreground' : 'text-white'}`}
             >
               <Phone className="w-4 h-4" />
-              8 (800) 123-45-67
+              8 (928) 761-96-61
             </a>
             {themeBtn}
             <Button onClick={() => handleClick('#contacts')} size="sm" className="bg-primary hover:bg-primary/90">
