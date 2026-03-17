@@ -33,6 +33,7 @@ export default function Home() {
       <FAQSection />
       <ContactsSection />
       <Footer />
+      <QuizModal />
     </div>
   );
 }
