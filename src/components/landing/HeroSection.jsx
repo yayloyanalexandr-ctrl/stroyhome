@@ -18,7 +18,7 @@ export default function HeroSection({ heroImage }) {
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img src={heroImage} alt="Современный дом" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/60 to-foreground/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40">
@@ -51,8 +51,7 @@ export default function HeroSection({ heroImage }) {
             </Button>
             <Button
               size="lg"
-              variant="outline"
-              className="border-white/30 text-white hover:bg-white/10 hover:text-white text-base px-8 h-13"
+              className="bg-white/15 border border-white/40 text-white hover:bg-white/25 text-base px-8 h-13 backdrop-blur-sm"
               onClick={() => scrollTo('#projects')}
             >
               Смотреть проекты
