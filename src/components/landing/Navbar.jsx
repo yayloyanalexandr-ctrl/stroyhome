@@ -60,11 +60,14 @@ export default function Navbar() {
 
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">Д</span>
-            </div>
+            <img
+              src="https://media.base44.com/images/public/69b958ccec4c782c15841246/f9a0344a4_logo-c.png"
+              alt="Южный Дом"
+              className="w-10 h-10 object-contain"
+              style={{ filter: scrolled ? 'invert(0)' : 'brightness(0) invert(1)' }}
+            />
             <span className={`font-bold text-lg tracking-tight ${scrolled ? 'text-foreground' : 'text-white'}`}>
-              ДомСтрой
+              Южный Дом
             </span>
           </div>
 
