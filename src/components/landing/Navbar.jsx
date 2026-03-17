@@ -75,11 +75,27 @@ export default function Navbar() {
               <Phone className="w-4 h-4" />
               8 (800) 123-45-67
             </a>
+            <button
+              onClick={() => setDark(!dark)}
+              className={`p-2 rounded-lg transition-colors ${
+                scrolled ? 'text-muted-foreground hover:text-foreground hover:bg-muted' : 'text-white/80 hover:text-white hover:bg-white/10'
+              }`}
+              title={dark ? 'Светлая тема' : 'Тёмная тема'}
+            >
+              {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
             <Button onClick={() => handleClick('#contacts')} size="sm" className="bg-primary hover:bg-primary/90">
               Оставить заявку
             </Button>
           </div>
 
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              onClick={() => setDark(!dark)}
+              className={`p-2 rounded-lg transition-colors ${scrolled ? 'text-foreground' : 'text-white'}`}
+            >
+              {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={`lg:hidden p-2 rounded-lg ${scrolled ? 'text-foreground' : 'text-white'}`}
