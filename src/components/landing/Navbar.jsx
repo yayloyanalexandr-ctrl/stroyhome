@@ -64,7 +64,7 @@ export default function Navbar() {
               src="https://media.base44.com/images/public/69b958ccec4c782c15841246/f9a0344a4_logo-c.png"
               alt="Южный Дом"
               className="w-10 h-10 object-contain"
-              style={{ filter: scrolled ? 'none' : 'brightness(0) invert(1)' }}
+              style={{ filter: scrolled ? 'invert(1) brightness(0)' : 'none' }}
             />
             <span className={`font-bold text-lg tracking-tight ${scrolled ? 'text-foreground' : 'text-white'}`}>
               Южный Дом
