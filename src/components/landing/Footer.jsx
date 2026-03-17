@@ -66,7 +66,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 text-sm">
                 <MapPin className="w-4 h-4 text-primary mt-0.5" />
-                <span>г. Ростов-на-Дону, ул. Большая Садовая, 100</span>
+                <span>г. Ростов-на-Дону, ул. Пушкинская д.16</span>
               </li>
             </ul>
           </div>
@@ -87,7 +87,7 @@ export default function Footer() {
 
         <div className="border-t border-background/10 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-background/40">
-            © {new Date().getFullYear()} ДомСтрой. Все права защищены.
+            © {new Date().getFullYear()} Южный Дом. Все права защищены.
           </p>
           <p className="text-xs text-background/40">
             ИНН 1234567890 | ОГРН 1234567890123

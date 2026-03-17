@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 import ContactForm from './ContactForm';
 
 const contactInfo = [
-  { icon: MapPin, label: 'Адрес', value: 'г. Ростов-на-Дону, ул. Большая Садовая, 100' },
+  { icon: MapPin, label: 'Адрес', value: 'г. Ростов-на-Дону, ул. Пушкинская д.16' },
   { icon: Phone, label: 'Телефон', value: '8 (800) 123-45-67', href: 'tel:+78001234567' },
   { icon: Mail, label: 'Email', value: 'info@domstroy61.ru', href: 'mailto:info@domstroy61.ru' },
   { icon: Clock, label: 'Режим работы', value: 'Пн-Пт: 9:00 — 18:00, Сб: 10:00 — 15:00' },
