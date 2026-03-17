@@ -9,15 +9,15 @@ import FAQSection from '../components/landing/FAQSection';
 import ContactsSection from '../components/landing/ContactsSection';
 import Footer from '../components/landing/Footer';
 
-const heroImage = '/__generating__/img_f56316affffc.png';
-const aboutImage = '/__generating__/img_08e8fce7693d.png';
+const heroImage = 'https://media.base44.com/images/public/69b958ccec4c782c15841246/92e85bad2_generated_623b2115.png';
+const aboutImage = 'https://media.base44.com/images/public/69b958ccec4c782c15841246/3a10121c5_generated_70e6ad1f.png';
 const projectImages = [
-  '/__generating__/img_144d565fadad.png',
-  '/__generating__/img_02f6a3c4f920.png',
-  '/__generating__/img_d67693201f4e.png',
-  '/__generating__/img_a1f2333a7274.png',
-  '/__generating__/img_8b661b1897b1.png',
-  '/__generating__/img_5dd1e345ffd3.png',
+  'https://media.base44.com/images/public/69b958ccec4c782c15841246/fd384c386_generated_1076846b.png',
+  'https://media.base44.com/images/public/69b958ccec4c782c15841246/26ce16976_generated_9fbdbdf0.png',
+  'https://media.base44.com/images/public/69b958ccec4c782c15841246/6443a8f98_generated_73dcb5a8.png',
+  'https://media.base44.com/images/public/69b958ccec4c782c15841246/9ecf7b251_generated_4f5d6102.png',
+  'https://media.base44.com/images/public/69b958ccec4c782c15841246/639a52735_generated_343369c4.png',
+  'https://media.base44.com/images/public/69b958ccec4c782c15841246/41a5b0a19_generated_aa08468d.png',
 ];
 
 export default function Home() {
