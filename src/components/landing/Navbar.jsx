@@ -37,12 +37,28 @@ export default function Navbar() {
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const themeBtn = (
+    <button
+      onClick={() => setDark(!dark)}
+      className={`p-2 rounded-lg transition-colors ${
+        scrolled
+          ? 'text-muted-foreground hover:text-foreground hover:bg-muted'
+          : 'text-white/80 hover:text-white hover:bg-white/10'
+      }`}
+      title={dark ? 'Светлая тема' : 'Тёмная тема'}
+    >
+      {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+    </button>
+  );
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       scrolled ? 'bg-card/95 backdrop-blur-xl shadow-lg shadow-foreground/5' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
+
+          {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-lg">Д</span>
@@ -52,14 +68,15 @@ export default function Navbar() {
             </span>
           </div>
 
+          {/* Desktop nav links */}
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => handleClick(link.href)}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  scrolled 
-                    ? 'text-muted-foreground hover:text-foreground hover:bg-muted' 
+                  scrolled
+                    ? 'text-muted-foreground hover:text-foreground hover:bg-muted'
                     : 'text-white/80 hover:text-white hover:bg-white/10'
                 }`}
               >
@@ -68,41 +85,32 @@ export default function Navbar() {
             ))}
           </div>
 
+          {/* Desktop right */}
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+78001234567" className={`flex items-center gap-2 text-sm font-semibold ${
-              scrolled ? 'text-foreground' : 'text-white'
-            }`}>
+            <a
+              href="tel:+78001234567"
+              className={`flex items-center gap-2 text-sm font-semibold ${scrolled ? 'text-foreground' : 'text-white'}`}
+            >
               <Phone className="w-4 h-4" />
               8 (800) 123-45-67
             </a>
-            <button
-              onClick={() => setDark(!dark)}
-              className={`p-2 rounded-lg transition-colors ${
-                scrolled ? 'text-muted-foreground hover:text-foreground hover:bg-muted' : 'text-white/80 hover:text-white hover:bg-white/10'
-              }`}
-              title={dark ? 'Светлая тема' : 'Тёмная тема'}
-            >
-              {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </button>
+            {themeBtn}
             <Button onClick={() => handleClick('#contacts')} size="sm" className="bg-primary hover:bg-primary/90">
               Оставить заявку
             </Button>
           </div>
 
-          <div className="flex items-center gap-2 lg:hidden">
+          {/* Mobile right */}
+          <div className="flex items-center gap-1 lg:hidden">
+            {themeBtn}
             <button
-              onClick={() => setDark(!dark)}
-              className={`p-2 rounded-lg transition-colors ${scrolled ? 'text-foreground' : 'text-white'}`}
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className={`p-2 rounded-lg ${scrolled ? 'text-foreground' : 'text-white'}`}
             >
-              {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className={`p-2 rounded-lg ${scrolled ? 'text-foreground' : 'text-white'}`}
-          >
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
           </div>
+
         </div>
       </div>
 
