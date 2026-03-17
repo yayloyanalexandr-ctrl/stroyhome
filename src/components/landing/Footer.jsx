@@ -21,10 +21,12 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">Д</span>
-              </div>
-              <span className="font-bold text-lg text-background">ДомСтрой</span>
+              <img
+                src="https://media.base44.com/images/public/69b958ccec4c782c15841246/f9a0344a4_logo-c.png"
+                alt="Южный Дом"
+                className="w-10 h-10 object-contain brightness-0 invert"
+              />
+              <span className="font-bold text-lg text-background">Южный Дом</span>
             </div>
             <p className="text-sm leading-relaxed text-background/60">
               Надёжный застройщик частных домов в Ростове-на-Дону. Строим дома мечты с 2012 года.
