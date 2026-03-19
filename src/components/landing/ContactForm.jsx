@@ -14,6 +14,7 @@ export default function ContactForm({ source = 'contacts' }) {
     e.preventDefault();
     setLoading(true);
     await base44.entities.ContactRequest.create({ ...form, source });
+    await base44.functions.invoke('sendTelegramNotification', { ...form, source });
     setLoading(false);
     setSuccess(true);
     setForm({ name: '', phone: '', message: '' });
