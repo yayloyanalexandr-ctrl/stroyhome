@@ -43,7 +43,7 @@ export default function HeroSection({ heroImage }) {
           <div className="flex flex-col sm:flex-row gap-3 mb-10">
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground text-base px-8 h-13"
+              className="bg-primary hover:bg-primary/90 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97] text-primary-foreground text-base px-8 h-13 font-semibold shadow-lg transition-all duration-200"
               onClick={() => scrollTo('#contacts')}
             >
               Получить консультацию
@@ -51,7 +51,7 @@ export default function HeroSection({ heroImage }) {
             </Button>
             <Button
               size="lg"
-              className="bg-white/15 border border-white/40 text-white hover:bg-white/25 text-base px-8 h-13 backdrop-blur-sm"
+              className="bg-white/15 border-2 border-white/50 text-white hover:bg-white/25 hover:border-white/80 hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.97] text-base px-8 h-13 font-semibold backdrop-blur-sm transition-all duration-200"
               onClick={() => scrollTo('#projects')}
             >
               Смотреть проекты
