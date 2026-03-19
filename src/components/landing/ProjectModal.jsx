@@ -6,11 +6,14 @@ import { Button } from '@/components/ui/button';
 
 export default function ProjectModal({ project, onClose }) {
   const [imgIndex, setImgIndex] = useState(0);
+  const [planIndex, setPlanIndex] = useState(0);
 
   if (!project) return null;
 
   const prev = () => setImgIndex((i) => (i - 1 + project.images.length) % project.images.length);
   const next = () => setImgIndex((i) => (i + 1) % project.images.length);
+  const planPrev = () => setPlanIndex((i) => (i - 1 + project.plans.length) % project.plans.length);
+  const planNext = () => setPlanIndex((i) => (i + 1) % project.plans.length);
 
   const scrollToContacts = () => {
     onClose();
