@@ -65,7 +65,7 @@ export default function AboutSection({ aboutImage }) {
             <p className="text-muted-foreground leading-relaxed">
               Мы работаем с ведущими банками страны и предлагаем строительство по эскроу счету, что обеспечивает полную финансовую защиту наших клиентов. Каждый этап строительства проходит строгий контроль качества.
             </p>
-            <div className="grid grid-cols-2 gap-4 pt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
               {benefits.map((b, i) => (
                 <div key={i} className="flex gap-3">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
