@@ -84,7 +84,18 @@ export default function Footer() {
                 Телеграм
               </a>
               <a href="https://max.ru/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-white/50 hover:text-white transition-colors">
-                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L6.15 14.924l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.666.662z"/></svg>
+                <svg viewBox="0 0 100 100" className="w-4 h-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="maxGradFooter" x1="0%" y1="100%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#4FC3F7"/>
+                      <stop offset="50%" stopColor="#7C4DFF"/>
+                      <stop offset="100%" stopColor="#CE93D8"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="100" height="100" rx="22" fill="url(#maxGradFooter)"/>
+                  <path d="M50 18C32.3 18 18 32.3 18 50c0 5.8 1.6 11.2 4.4 15.8L18 82l16.8-4.3C39.2 80.4 44.4 82 50 82c17.7 0 32-14.3 32-32S67.7 18 50 18zm0 8c13.3 0 24 10.7 24 24S63.3 74 50 74c-4.7 0-9.1-1.3-12.8-3.7l-1-.6-9.9 2.5 2.6-9.6-.7-1C26.4 58.7 26 54.4 26 50c0-13.3 10.7-24 24-24z" fill="white"/>
+                  <circle cx="50" cy="50" r="10" fill="url(#maxGradFooter)"/>
+                </svg>
                 MAX
               </a>
             </div>
