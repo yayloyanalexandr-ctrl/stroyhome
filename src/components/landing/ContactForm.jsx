@@ -20,7 +20,7 @@ export default function ContactForm({ source = 'contacts' }) {
     });
     setLoading(false);
     setSuccess(true);
-    setForm({ name: '', phone: '', email: '', message: '' });
+    setForm({ name: '', phone: '', message: '' });
     setTimeout(() => setSuccess(false), 4000);
   };
 
@@ -60,17 +60,7 @@ export default function ContactForm({ source = 'contacts' }) {
         </div>
       </div>
       <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
-        <Input
-          id="email"
-          type="email"
-          placeholder="example@mail.ru"
-          value={form.email}
-          onChange={(e) => setForm({ ...form, email: e.target.value })}
-        />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="message">Сообщение</Label>
+        <Label htmlFor="message">Сообщение <span className="text-muted-foreground font-normal">(необязательно для заполнения)</span></Label>
         <Textarea
           id="message"
           placeholder="Расскажите о вашем проекте..."
