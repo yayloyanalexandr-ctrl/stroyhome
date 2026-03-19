@@ -130,7 +130,7 @@ const projects = [
   },
 ];
 
-function ProjectCard({ project, index }) {
+function ProjectCard({ project, index, onOpen }) {
   const [imgIndex, setImgIndex] = useState(0);
 
   const prev = (e) => {
