@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
-import { Send, Loader2, CheckCircle } from 'lucide-react';
+import { Send, Loader2, CheckCircle, User, Phone, MessageSquare } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 
 export default function ContactForm({ source = 'contacts' }) {
@@ -14,9 +13,11 @@ export default function ContactForm({ source = 'contacts' }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    await base44.entities.ContactRequest.create({
-      ...form,
-      source,
+    await base44.entities.ContactRequest.create({ ...form, source });
+    await base44.integrations.Core.SendEmail({
+      to: 'ananskihigor1526@gmail.com',
+      subject: `Новая заявка с сайта — ${form.name}`,
+      body: `Новая заявка с сайта Южный Дом:\n\nИмя: ${form.name}\nТелефон: ${form.phone}\nСообщение: ${form.message || '—'}`,
     });
     setLoading(false);
     setSuccess(true);
@@ -26,55 +27,54 @@ export default function ContactForm({ source = 'contacts' }) {
 
   if (success) {
     return (
-      <div className="text-center py-12">
-        <CheckCircle className="w-12 h-12 text-accent mx-auto mb-4" />
+      <div className="flex flex-col items-center justify-center py-10 text-center">
+        <div className="w-16 h-16 rounded-full bg-accent/15 flex items-center justify-center mb-4">
+          <CheckCircle className="w-8 h-8 text-accent" />
+        </div>
         <p className="text-lg font-semibold text-foreground">Заявка отправлена!</p>
-        <p className="text-muted-foreground mt-1">Мы свяжемся с вами в ближайшее время</p>
+        <p className="text-muted-foreground mt-1 text-sm">Мы свяжемся с вами в ближайшее время</p>
       </div>
     );
   }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid sm:grid-cols-2 gap-4">
-        <div className="space-y-2">
-          <Label htmlFor="name">Ваше имя *</Label>
-          <Input
-            id="name"
-            placeholder="Иван Иванов"
-            value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-            required
-          />
-        </div>
-        <div className="space-y-2">
-          <Label htmlFor="phone">Телефон *</Label>
-          <Input
-            id="phone"
-            type="tel"
-            placeholder="+7 (900) 123-45-67"
-            value={form.phone}
-            onChange={(e) => setForm({ ...form, phone: e.target.value })}
-            required
-          />
-        </div>
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="message">Сообщение <span className="text-muted-foreground font-normal">(необязательно для заполнения)</span></Label>
-        <Textarea
-          id="message"
-          placeholder="Расскажите о вашем проекте..."
-          value={form.message}
-          onChange={(e) => setForm({ ...form, message: e.target.value })}
-          className="h-28"
+      <div className="relative">
+        <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
+        <Input
+          placeholder="Ваше имя *"
+          value={form.name}
+          onChange={(e) => setForm({ ...form, name: e.target.value })}
+          required
+          className="pl-10 h-12"
         />
       </div>
-      <Button type="submit" disabled={loading} className="w-full bg-primary hover:bg-primary/90 h-12">
+      <div className="relative">
+        <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
+        <Input
+          type="tel"
+          placeholder="Телефон *"
+          value={form.phone}
+          onChange={(e) => setForm({ ...form, phone: e.target.value })}
+          required
+          className="pl-10 h-12"
+        />
+      </div>
+      <div className="relative">
+        <MessageSquare className="absolute left-3 top-3.5 w-4 h-4 text-muted-foreground pointer-events-none" />
+        <Textarea
+          placeholder="Сообщение (необязательно)..."
+          value={form.message}
+          onChange={(e) => setForm({ ...form, message: e.target.value })}
+          className="pl-10 h-28 resize-none"
+        />
+      </div>
+      <Button type="submit" disabled={loading} className="w-full bg-primary hover:bg-primary/90 h-12 text-base font-semibold">
         {loading ? (
           <Loader2 className="w-5 h-5 animate-spin" />
         ) : (
           <>
-            <Send className="w-5 h-5 mr-2" />
+            <Send className="w-4 h-4 mr-2" />
             Отправить заявку
           </>
         )}

@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import ContactForm from './ContactForm';
 
 const contactInfo = [
-  { icon: MapPin, label: 'Адрес', value: 'г. Ростов-на-Дону, ул. Пушкинская д.16' },
   { icon: Phone, label: 'Телефон', value: '8 (928) 761-96-61', href: 'tel:+79287619661' },
   { icon: Mail, label: 'Email', value: 'domyujniy@yandex.ru', href: 'mailto:domyujniy@yandex.ru' },
+  { icon: MapPin, label: 'Адрес', value: 'г. Ростов-на-Дону, ул. Пушкинская д.16' },
   { icon: Clock, label: 'Режим работы', value: 'Ежедневно с 10:00 до 19:00' },
 ];
 
@@ -42,14 +42,14 @@ const socials = [
 
 export default function ContactsSection() {
   return (
-    <section id="contacts" className="py-24 lg:py-32 bg-card">
+    <section id="contacts" className="py-24 lg:py-32 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
           <span className="text-primary text-sm font-semibold tracking-wide uppercase">Контакты</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mt-3 mb-4">
@@ -60,41 +60,57 @@ export default function ContactsSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-12">
-          <div className="lg:col-span-3 bg-background rounded-2xl border border-border p-5 sm:p-8">
-            <h3 className="text-xl font-bold text-foreground mb-2">Оставить заявку</h3>
-            <p className="text-muted-foreground text-sm mb-6">Заполните форму — мы свяжемся с вами в удобное время</p>
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* Форма */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-card rounded-3xl border border-border p-8 shadow-sm"
+          >
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold text-foreground">Оставить заявку</h3>
+              <p className="text-muted-foreground text-sm mt-1">Мы свяжемся с вами в удобное время</p>
+            </div>
             <ContactForm source="contacts" />
-          </div>
+          </motion.div>
 
-          <div className="lg:col-span-2 space-y-5">
-            {contactInfo.map((info, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.4 }}
-                className="flex gap-4 items-start"
-              >
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <info.icon className="w-5 h-5 text-primary" />
+          {/* Контактная информация */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col gap-6"
+          >
+            {/* Карточки контактов */}
+            <div className="grid sm:grid-cols-2 gap-4">
+              {contactInfo.map((info, i) => (
+                <div
+                  key={i}
+                  className="bg-card rounded-2xl border border-border p-5 flex gap-4 items-start hover:shadow-md transition-shadow"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <info.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-xs text-muted-foreground mb-0.5">{info.label}</p>
+                    {info.href ? (
+                      <a href={info.href} className="font-semibold text-foreground hover:text-primary transition-colors text-sm leading-tight break-all">
+                        {info.value}
+                      </a>
+                    ) : (
+                      <p className="font-semibold text-foreground text-sm leading-tight">{info.value}</p>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <p className="text-xs text-muted-foreground mb-0.5">{info.label}</p>
-                  {info.href ? (
-                    <a href={info.href} className="font-medium text-foreground hover:text-primary transition-colors">
-                      {info.value}
-                    </a>
-                  ) : (
-                    <p className="font-medium text-foreground">{info.value}</p>
-                  )}
-                </div>
-              </motion.div>
-            ))}
+              ))}
+            </div>
 
-            <div className="pt-4 border-t border-border">
-              <p className="text-sm font-semibold text-foreground mb-3">Мы в соцсетях</p>
+            {/* Соцсети */}
+            <div className="bg-card rounded-2xl border border-border p-5">
+              <p className="text-sm font-semibold text-foreground mb-4">Мы в соцсетях</p>
               <div className="flex gap-3">
                 {socials.map((s) => (
                   <a
@@ -103,7 +119,7 @@ export default function ContactsSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     title={s.label}
-                    className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors"
+                    className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200"
                   >
                     {s.icon}
                   </a>
@@ -111,17 +127,18 @@ export default function ContactsSection() {
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden border border-border h-48 lg:h-56">
+            {/* Карта */}
+            <div className="rounded-2xl overflow-hidden border border-border flex-1 min-h-[180px]">
               <iframe
                 src="https://www.openstreetmap.org/export/embed.html?bbox=39.6%2C47.2%2C39.8%2C47.3&layer=mapnik&marker=47.235714%2C39.701505"
                 width="100%"
                 height="100%"
-                style={{ border: 0 }}
+                style={{ border: 0, minHeight: 180 }}
                 loading="lazy"
                 title="Карта"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
