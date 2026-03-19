@@ -2,13 +2,13 @@ import React from 'react';
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 
 const navLinks = [
-  { label: 'О компании', href: '#about' },
-  { label: 'Услуги', href: '#services' },
-  { label: 'Проекты', href: '#projects' },
-  { label: 'Отзывы', href: '#reviews' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Контакты', href: '#contacts' },
-];
+{ label: 'О компании', href: '#about' },
+{ label: 'Услуги', href: '#services' },
+{ label: 'Проекты', href: '#projects' },
+{ label: 'Отзывы', href: '#reviews' },
+{ label: 'FAQ', href: '#faq' },
+{ label: 'Контакты', href: '#contacts' }];
+
 
 export default function Footer() {
   const scrollTo = (href) => {
@@ -25,28 +25,28 @@ export default function Footer() {
                 src="https://media.base44.com/images/public/69b958ccec4c782c15841246/f9a0344a4_logo-c.png"
                 alt="Южный Дом"
                 className="w-10 h-10 object-contain"
-                style={{ mixBlendMode: 'screen' }}
-              />
+                style={{ mixBlendMode: 'screen' }} />
+              
               <span className="font-bold text-lg text-white">Южный Дом</span>
             </div>
-            <p className="text-sm leading-relaxed text-white/50">
-              Надёжный застройщик частных домов в Ростове-на-Дону. Строим дома мечты с 2012 года.
+            <p className="text-sm leading-relaxed text-white/50">Надёжный застройщик частных домов в Ростове-на-Дону. Строим дома мечты с 2015 года.
+
             </p>
           </div>
 
           <div>
             <h4 className="font-semibold text-white mb-4">Навигация</h4>
             <ul className="space-y-2.5">
-              {navLinks.map((link) => (
-                <li key={link.href}>
+              {navLinks.map((link) =>
+              <li key={link.href}>
                   <button
-                    onClick={() => scrollTo(link.href)}
-                    className="text-sm text-white/50 hover:text-white transition-colors"
-                  >
+                  onClick={() => scrollTo(link.href)}
+                  className="text-sm text-white/50 hover:text-white transition-colors">
+                  
                     {link.label}
                   </button>
                 </li>
-              ))}
+              )}
             </ul>
           </div>
 
@@ -78,8 +78,8 @@ export default function Footer() {
               href="https://vk.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-white transition-colors"
-            >
+              className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-white transition-colors">
+              
               <MessageCircle className="w-4 h-4" />
               ВКонтакте
             </a>
@@ -95,6 +95,6 @@ export default function Footer() {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 }
