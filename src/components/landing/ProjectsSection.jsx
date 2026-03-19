@@ -201,7 +201,7 @@ function ProjectCard({ project, index, onOpen }) {
         </div>
         <div className="flex items-center justify-between">
           <span className="text-lg font-bold text-primary">{project.price}</span>
-          <Button size="sm" variant="outline" onClick={() => scrollTo('#contacts')}>
+          <Button size="sm" variant="outline" onClick={() => onOpen(project)}>
             Подробнее
           </Button>
         </div>
