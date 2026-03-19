@@ -18,6 +18,10 @@ const projects = [
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/282b401d9_60-2.jpg',
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/207c14d30_60-3.jpg',
     ],
+    plans: [
+      'https://media.base44.com/images/public/69b958ccec4c782c15841246/b121d9cc5_602-.jpg',
+      'https://media.base44.com/images/public/69b958ccec4c782c15841246/c8bd62fb5_602-3.jpg',
+    ],
   },
   {
     title: 'Проект 65 м²',
@@ -29,6 +33,10 @@ const projects = [
     images: [
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/c3c935bd9_65-1.jpg',
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/2edba92ae_65-2.jpg',
+    ],
+    plans: [
+      'https://media.base44.com/images/public/69b958ccec4c782c15841246/7c67a1549_652-2.jpg',
+      'https://media.base44.com/images/public/69b958ccec4c782c15841246/f6dd58c75_652-3.jpg',
     ],
   },
   {
@@ -42,6 +50,10 @@ const projects = [
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/bfa4eb5d6_70-1.jpg',
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/830a24c33_70-2.jpg',
     ],
+    plans: [
+      'https://media.base44.com/images/public/69b958ccec4c782c15841246/1e2c649a8_702-2.jpg',
+      'https://media.base44.com/images/public/69b958ccec4c782c15841246/7c7829862_702-3.jpg',
+    ],
   },
   {
     title: 'Проект 75 м²',
@@ -53,6 +65,10 @@ const projects = [
     images: [
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/64b660820_75-1.jpg',
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/b28714839_75-2.jpg',
+    ],
+    plans: [
+      'https://media.base44.com/images/public/69b958ccec4c782c15841246/05746d36b_752-2.jpg',
+      'https://media.base44.com/images/public/69b958ccec4c782c15841246/b4c12edd3_752-3.jpg',
     ],
   },
   {
@@ -66,6 +82,10 @@ const projects = [
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/b0cf4da97_80-1.jpg',
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/6dde41730_80-2.jpg',
     ],
+    plans: [
+      'https://media.base44.com/images/public/69b958ccec4c782c15841246/e9171da03_802-2.jpg',
+      'https://media.base44.com/images/public/69b958ccec4c782c15841246/17b2c2a2d_802-3.jpg',
+    ],
   },
   {
     title: 'Проект 85 м²',
@@ -77,6 +97,10 @@ const projects = [
     images: [
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/800105058_85-1.jpg',
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/e21e35787_85-2.jpg',
+    ],
+    plans: [
+      'https://media.base44.com/images/public/69b958ccec4c782c15841246/86c012956_85-2.jpg',
+      'https://media.base44.com/images/public/69b958ccec4c782c15841246/292e164ef_85-3.jpg',
     ],
   },
   {
@@ -90,6 +114,10 @@ const projects = [
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/51f9f4181_90-1.jpg',
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/7b50e4b15_90-2.jpg',
     ],
+    plans: [
+      'https://media.base44.com/images/public/69b958ccec4c782c15841246/6ac3e1946_902-2.jpg',
+      'https://media.base44.com/images/public/69b958ccec4c782c15841246/90b8d6c44_902-3.jpg',
+    ],
   },
   {
     title: 'Проект 98 м²',
@@ -101,6 +129,9 @@ const projects = [
     images: [
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/2f2beaea7_98-1.jpg',
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/94a19637b_98-2.jpg',
+    ],
+    plans: [
+      'https://media.base44.com/images/public/69b958ccec4c782c15841246/3681f91f4_982.jpg',
     ],
   },
   {
@@ -114,6 +145,9 @@ const projects = [
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/09bf11873_101-1.jpg',
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/2e6b59dcc_101-2.jpg',
     ],
+    plans: [
+      'https://media.base44.com/images/public/69b958ccec4c782c15841246/f59555563_1012.jpg',
+    ],
   },
   {
     title: 'Проект 110 м²',
@@ -126,6 +160,9 @@ const projects = [
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/8c49fac25_110-1.jpg',
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/2ecb9a044_110-2.jpg',
       'https://media.base44.com/images/public/69b958ccec4c782c15841246/714878318_110-3.jpg',
+    ],
+    plans: [
+      'https://media.base44.com/images/public/69b958ccec4c782c15841246/36126c3ab_1102.jpg',
     ],
   },
 ];
