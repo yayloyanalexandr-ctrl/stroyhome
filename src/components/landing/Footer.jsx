@@ -81,11 +81,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-background/10 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-background/40">
+        <div className="border-t border-white/10 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-white/30">
             © {new Date().getFullYear()} Южный Дом. Все права защищены.
           </p>
-          <p className="text-xs text-background/40">
+          <p className="text-xs text-white/30">
             ИНН 1234567890 | ОГРН 1234567890123
           </p>
         </div>
