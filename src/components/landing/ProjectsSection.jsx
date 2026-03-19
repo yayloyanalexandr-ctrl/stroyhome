@@ -241,10 +241,12 @@ export default function ProjectsSection() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence>
             {displayed.map((project, i) => (
-              <ProjectCard key={project.title} project={project} index={i} />
+              <ProjectCard key={project.title} project={project} index={i} onOpen={setSelectedProject} />
             ))}
           </AnimatePresence>
         </div>
+
+        <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
 
         <div className="text-center mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           {!showAll && projects.length > 6 && (
