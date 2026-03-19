@@ -99,7 +99,7 @@ export default function QuizModal() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.92, y: 20 }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="bg-card border border-border rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden"
+            className="bg-card border border-border rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden max-h-[90vh] overflow-y-auto"
           >
             {/* Header */}
             <div className="relative bg-primary px-6 pt-6 pb-8">

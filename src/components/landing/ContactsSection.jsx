@@ -31,7 +31,7 @@ export default function ContactsSection() {
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-12">
-          <div className="lg:col-span-3 bg-background rounded-2xl border border-border p-8">
+          <div className="lg:col-span-3 bg-background rounded-2xl border border-border p-5 sm:p-8">
             <h3 className="text-xl font-bold text-foreground mb-6">Оставить заявку</h3>
             <ContactForm source="contacts" />
           </div>
