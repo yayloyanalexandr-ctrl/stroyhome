@@ -211,7 +211,7 @@ export default function QuizModal() {
                       disabled={!contact.name || !contact.phone || loading}
                       className="w-full bg-primary hover:bg-primary/90"
                     >
-                      {loading ? 'Отправляем...' : 'Получить расчёт бесплатно'}
+                      {loading ? 'Отправляем...' : 'Отправить заявку'}
                     </Button>
                     <p className="text-center text-muted-foreground text-xs mt-3">
                       Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
