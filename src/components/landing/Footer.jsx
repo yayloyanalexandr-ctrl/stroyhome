@@ -26,9 +26,9 @@ export default function Footer() {
                 alt="Южный Дом"
                 className="w-10 h-10 object-contain brightness-0 invert"
               />
-              <span className="font-bold text-lg text-background">Южный Дом</span>
+              <span className="font-bold text-lg text-white">Южный Дом</span>
             </div>
-            <p className="text-sm leading-relaxed text-background/60">
+            <p className="text-sm leading-relaxed text-white/50">
               Надёжный застройщик частных домов в Ростове-на-Дону. Строим дома мечты с 2012 года.
             </p>
           </div>
