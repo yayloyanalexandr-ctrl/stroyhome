@@ -104,6 +104,45 @@ export default function ProjectModal({ project, onClose }) {
               </div>
             </div>
 
+            {/* Floor plans */}
+            {project.plans && project.plans.length > 0 && (
+              <div className="mb-6">
+                <h3 className="text-sm font-semibold text-foreground mb-3 uppercase tracking-wide">Планировка</h3>
+                <div className="relative rounded-xl overflow-hidden bg-white border border-border">
+                  <img
+                    src={project.plans[planIndex]}
+                    alt={`Планировка ${planIndex + 1}`}
+                    className="w-full object-contain max-h-72"
+                  />
+                  {project.plans.length > 1 && (
+                    <>
+                      <button
+                        onClick={planPrev}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition-colors"
+                      >
+                        <ChevronLeft className="w-5 h-5" />
+                      </button>
+                      <button
+                        onClick={planNext}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition-colors"
+                      >
+                        <ChevronRight className="w-5 h-5" />
+                      </button>
+                      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+                        {project.plans.map((_, i) => (
+                          <button
+                            key={i}
+                            onClick={() => setPlanIndex(i)}
+                            className={`w-2 h-2 rounded-full transition-colors ${i === planIndex ? 'bg-primary' : 'bg-primary/30'}`}
+                          />
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
+
             <div className="flex items-center justify-between">
               <span className="text-2xl font-bold text-primary">{project.price}</span>
               <Button onClick={scrollToContacts} className="bg-primary hover:bg-primary/90">
