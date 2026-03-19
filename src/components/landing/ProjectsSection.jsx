@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Maximize2, BedDouble, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import ProjectModal from './ProjectModal';
 
 const projects = [
   {
