@@ -40,7 +40,7 @@ export default function HeroSection({ heroImage }) {
             Полный цикл строительства частных домов — от проекта до новоселья. Работаем по эскроу счету для вашей безопасности.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row gap-3 mb-10">
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground text-base px-8 h-13"
@@ -58,7 +58,7 @@ export default function HeroSection({ heroImage }) {
             </Button>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {advantages.map((adv, i) => (
               <motion.div
                 key={i}
