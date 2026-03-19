@@ -43,7 +43,7 @@ export default function HeroSection({ heroImage }) {
           <div className="flex flex-col sm:flex-row gap-3 mb-10">
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97] text-primary-foreground text-base px-8 h-13 font-semibold shadow-lg transition-all duration-200"
+              className="bg-primary hover:bg-primary/90 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97] text-primary-foreground text-lg px-10 h-14 font-semibold shadow-lg transition-all duration-200"
               onClick={() => scrollTo('#contacts')}
             >
               Получить консультацию
