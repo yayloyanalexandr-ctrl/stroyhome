@@ -20,7 +20,7 @@ export default function Home() {
       <HeroSection heroImage={heroImage} />
       <AboutSection aboutImage={aboutImage} />
       <ServicesSection />
-      <ProjectsSection projectImages={projectImages} />
+      <ProjectsSection />
       <ReviewsSection />
       <FAQSection />
       <ContactsSection />
