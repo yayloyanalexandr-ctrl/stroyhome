@@ -107,7 +107,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Южный Дом. Все права защищены.
           </p>
           <p className="text-xs text-white/30">
-            ИНН 1234567890 | ОГРН 1234567890123
+            ИНН 071510154501 | ОГРНИП 324150000000245
           </p>
         </div>
       </div>
