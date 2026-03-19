@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-background mb-4">Навигация</h4>
+            <h4 className="font-semibold text-white mb-4">Навигация</h4>
             <ul className="space-y-2.5">
               {navLinks.map((link) => (
                 <li key={link.href}>
