@@ -24,7 +24,8 @@ export default function Footer() {
               <img
                 src="https://media.base44.com/images/public/69b958ccec4c782c15841246/f9a0344a4_logo-c.png"
                 alt="Южный Дом"
-                className="w-10 h-10 object-contain brightness-0 invert"
+                className="w-10 h-10 object-contain"
+                style={{ mixBlendMode: 'screen' }}
               />
               <span className="font-bold text-lg text-white">Южный Дом</span>
             </div>
@@ -54,8 +55,12 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-sm">
                 <Phone className="w-4 h-4 text-primary" />
-                <a href="tel:+78001234567" className="hover:text-white transition-colors">
-                ...
+                <a href="tel:+79287619661" className="hover:text-white transition-colors">
+                  8 (928) 761-96-61
+                </a>
+              </li>
+              <li className="flex items-center gap-2 text-sm">
+                <Mail className="w-4 h-4 text-primary" />
                 <a href="mailto:info@domstroy61.ru" className="hover:text-white transition-colors">
                   info@domstroy61.ru
                 </a>
