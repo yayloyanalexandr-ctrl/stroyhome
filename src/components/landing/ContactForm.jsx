@@ -14,11 +14,6 @@ export default function ContactForm({ source = 'contacts' }) {
     e.preventDefault();
     setLoading(true);
     await base44.entities.ContactRequest.create({ ...form, source });
-    await base44.integrations.Core.SendEmail({
-      to: 'ananskihigor1526@gmail.com',
-      subject: `Новая заявка с сайта — ${form.name}`,
-      body: `Новая заявка с сайта Южный Дом:\n\nИмя: ${form.name}\nТелефон: ${form.phone}\nСообщение: ${form.message || '—'}`,
-    });
     setLoading(false);
     setSuccess(true);
     setForm({ name: '', phone: '', message: '' });
