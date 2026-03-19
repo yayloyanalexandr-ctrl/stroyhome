@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-background mb-4">Контакты</h4>
+            <h4 className="font-semibold text-white mb-4">Контакты</h4>
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-sm">
                 <Phone className="w-4 h-4 text-primary" />
