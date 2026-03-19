@@ -142,10 +142,6 @@ function ProjectCard({ project, index, onOpen }) {
     setImgIndex((i) => (i + 1) % project.images.length);
   };
 
-  const scrollTo = (id) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <motion.div
       key={project.title}
