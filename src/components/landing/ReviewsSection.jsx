@@ -58,7 +58,7 @@ export default function ReviewsSection() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
-            className="bg-background rounded-2xl border border-border p-8 lg:p-10 relative"
+            className="bg-background rounded-2xl border border-border p-5 sm:p-8 lg:p-10 relative"
           >
             <Quote className="w-10 h-10 text-primary/20 absolute top-6 right-6" />
             <div className="flex items-center gap-1 mb-4">
