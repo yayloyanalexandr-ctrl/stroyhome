@@ -14,7 +14,6 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dark, setDark] = useState(() => {
     const saved = localStorage.getItem('theme');
@@ -26,12 +25,6 @@ export default function Navbar() {
     localStorage.setItem('theme', dark ? 'dark' : 'light');
   }, [dark]);
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const handleClick = (href) => {
     setMobileOpen(false);
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
@@ -40,11 +33,7 @@ export default function Navbar() {
   const themeBtn = (
     <button
       onClick={() => setDark(!dark)}
-      className={`p-2 rounded-lg transition-colors ${
-        scrolled
-          ? 'text-muted-foreground hover:text-foreground hover:bg-muted'
-          : 'text-white/80 hover:text-white hover:bg-white/10'
-      }`}
+      className="p-2 rounded-lg transition-colors text-white/70 hover:text-white hover:bg-white/10"
       title={dark ? 'Светлая тема' : 'Тёмная тема'}
     >
       {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -52,7 +41,7 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-xl shadow-lg shadow-black/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black shadow-lg shadow-black/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
 
@@ -64,7 +53,7 @@ export default function Navbar() {
               className="w-10 h-10 object-contain"
               style={{ mixBlendMode: 'screen' }}
             />
-            <span className={`font-bold text-lg tracking-tight ${scrolled ? 'text-foreground' : 'text-white'}`}>
+            <span className="font-bold text-lg tracking-tight text-white">
               Южный Дом
             </span>
           </div>
@@ -75,11 +64,7 @@ export default function Navbar() {
               <button
                 key={link.href}
                 onClick={() => handleClick(link.href)}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  scrolled
-                    ? 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                    : 'text-white/80 hover:text-white hover:bg-white/10'
-                }`}
+                className="px-3 py-2 rounded-lg text-sm font-medium transition-colors text-white/70 hover:text-white hover:bg-white/10"
               >
                 {link.label}
               </button>
@@ -89,8 +74,8 @@ export default function Navbar() {
           {/* Desktop right */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:+78001234567"
-              className={`flex items-center gap-2 text-sm font-semibold ${scrolled ? 'text-foreground' : 'text-white'}`}
+              href="tel:+79287619661"
+              className="flex items-center gap-2 text-sm font-semibold text-white"
             >
               <Phone className="w-4 h-4" />
               8 (928) 761-96-61
@@ -106,7 +91,7 @@ export default function Navbar() {
             {themeBtn}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className={`p-2 rounded-lg ${scrolled ? 'text-foreground' : 'text-white'}`}
+              className="p-2 rounded-lg text-white"
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -121,19 +106,19 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-card/98 backdrop-blur-xl border-t border-border"
+            className="lg:hidden bg-black border-t border-white/10"
           >
             <div className="px-4 py-4 space-y-1">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => handleClick(link.href)}
-                  className="block w-full text-left px-4 py-3 rounded-lg text-foreground hover:bg-muted transition-colors text-sm font-medium"
+                  className="block w-full text-left px-4 py-3 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium"
                 >
                   {link.label}
                 </button>
               ))}
-              <div className="pt-3 border-t border-border">
+              <div className="pt-3 border-t border-white/10">
                 <Button onClick={() => handleClick('#contacts')} className="w-full bg-primary">
                   Оставить заявку
                 </Button>
