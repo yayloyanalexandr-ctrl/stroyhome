@@ -212,6 +212,7 @@ function ProjectCard({ project, index, onOpen }) {
 
 export default function ProjectsSection() {
   const [showAll, setShowAll] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
   const displayed = showAll ? projects : projects.slice(0, 6);
 
   const scrollTo = (id) => {
