@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Building2, Users, Award, Handshake } from 'lucide-react';
 
 const stats = [
-{ value: '12+', label: 'Лет на рынке' },
+{ value: '11+', label: 'Лет на рынке' },
 { value: '350+', label: 'Построенных домов' },
 { value: '98%', label: 'Довольных клиентов' },
 { value: '15+', label: 'Банков-партнёров' }];
