@@ -49,7 +49,7 @@ export default function ProjectModal({ project, onClose }) {
           </button>
 
           {/* Image gallery */}
-          <div className="relative h-72 sm:h-80 overflow-hidden bg-muted">
+          <div className="relative h-56 sm:h-72 overflow-hidden bg-muted">
             <img
               src={project.images[imgIndex]}
               alt={project.title}
