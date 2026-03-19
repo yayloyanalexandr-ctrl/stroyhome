@@ -77,6 +77,12 @@ export default function QuizModal() {
       source: 'consultation',
       status: 'new',
     });
+    await base44.functions.invoke('sendTelegramNotification', {
+      name: contact.name,
+      phone: contact.phone,
+      message,
+      source: 'consultation (квиз)',
+    });
     setLoading(false);
     setDone(true);
   };
