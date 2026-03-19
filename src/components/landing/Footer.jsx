@@ -54,13 +54,9 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-sm">
                 <Phone className="w-4 h-4 text-primary" />
-                <a href="tel:+78001234567" className="hover:text-background transition-colors">
-                  8 (800) 123-45-67
-                </a>
-              </li>
-              <li className="flex items-center gap-2 text-sm">
-                <Mail className="w-4 h-4 text-primary" />
-                <a href="mailto:info@domstroy61.ru" className="hover:text-background transition-colors">
+                <a href="tel:+78001234567" className="hover:text-white transition-colors">
+                ...
+                <a href="mailto:info@domstroy61.ru" className="hover:text-white transition-colors">
                   info@domstroy61.ru
                 </a>
               </li>
