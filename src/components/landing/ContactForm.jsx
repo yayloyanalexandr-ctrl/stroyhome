@@ -7,7 +7,7 @@ import { Send, Loader2, CheckCircle } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 
 export default function ContactForm({ source = 'contacts' }) {
-  const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', phone: '', message: '' });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
