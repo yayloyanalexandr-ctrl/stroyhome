@@ -40,7 +40,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <button
                     onClick={() => scrollTo(link.href)}
-                    className="text-sm text-background/60 hover:text-background transition-colors"
+                    className="text-sm text-white/50 hover:text-white transition-colors"
                   >
                     {link.label}
                   </button>
