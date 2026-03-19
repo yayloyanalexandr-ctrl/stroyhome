@@ -68,12 +68,12 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-background mb-4">Соцсети</h4>
+            <h4 className="font-semibold text-white mb-4">Соцсети</h4>
             <a
               href="https://vk.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-white transition-colors"
             >
               <MessageCircle className="w-4 h-4" />
               ВКонтакте
