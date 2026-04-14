@@ -23,7 +23,7 @@ ${message ? `<p><b>Сообщение:</b><br>${message}</p>` : ''}
       },
       body: JSON.stringify({
         from: 'onboarding@resend.dev',
-        to: 'Igrickog@yandex.ru',
+        to: 'yayloyanalexandr@gmail.com',
         subject: `Новая заявка с сайта — ${source || 'форма'}`,
         html: body,
       }),
