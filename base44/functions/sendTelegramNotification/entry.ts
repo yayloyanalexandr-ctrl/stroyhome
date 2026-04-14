@@ -19,7 +19,7 @@ ${message ? `<p><b>Сообщение:</b><br>${message}</p>` : ''}
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'noreply@xn----htbemrck4hya.com',
+        from: 'onboarding@resend.dev',
         to: 'Igrickog@yandex.ru',
         subject: `Новая заявка с сайта — ${source || 'форма'}`,
         html: body,
