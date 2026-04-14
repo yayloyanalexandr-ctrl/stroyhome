@@ -22,8 +22,8 @@ ${message ? `<p><b>Сообщение:</b><br>${message}</p>` : ''}
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'onboarding@resend.dev',
-        to: 'yayloyanalexandr@gmail.com',
+        from: 'noreply@xn----htbemrck4hya.com',
+        to: 'Igrickog@yandex.ru',
         subject: `Новая заявка с сайта — ${source || 'форма'}`,
         html: body,
       }),
