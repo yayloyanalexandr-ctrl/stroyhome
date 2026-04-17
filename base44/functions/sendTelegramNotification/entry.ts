@@ -2,34 +2,26 @@ Deno.serve(async (req) => {
   try {
     const { name, phone, message, source } = await req.json();
 
-    const apiKey = Deno.env.get('RESEND_API_KEY');
+    const token = Deno.env.get('VK_TOKEN');
+    const peerId = Deno.env.get('VK_PEER_ID');
 
-    const body = `
-<h2>Новая заявка с сайта!</h2>
-<p><b>Имя:</b> ${name}</p>
-<p><b>Телефон:</b> ${phone}</p>
-<p><b>Источник:</b> ${source || '—'}</p>
-${message ? `<p><b>Сообщение:</b><br>${message}</p>` : ''}
-    `.trim();
+    const text = `🏠 Новая заявка с сайта!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📍 Источник: ${source || '—'}${message ? `\n💬 Сообщение: ${message}` : ''}`;
 
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'onboarding@resend.dev',
-        to: 'Igrickog@yandex.ru',
-        subject: `Новая заявка с сайта — ${source || 'форма'}`,
-        html: body,
-      }),
+    const randomId = Math.floor(Math.random() * 1000000);
+
+    const params = new URLSearchParams({
+      user_id: peerId,
+      message: text,
+      random_id: randomId.toString(),
+      access_token: token,
+      v: '5.131',
     });
 
+    const response = await fetch(`https://api.vk.com/method/messages.send?${params.toString()}`);
     const result = await response.json();
 
-    if (!response.ok) {
-      return Response.json({ error: result }, { status: 500 });
+    if (result.error) {
+      return Response.json({ error: result.error }, { status: 500 });
     }
 
     return Response.json({ success: true });
