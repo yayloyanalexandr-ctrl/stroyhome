@@ -48,7 +48,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <img
-              src="https://media.base44.com/images/public/69b958ccec4c782c15841246/f9a0344a4_logo-c.png"
+              src="/assets/logo-c.png"
               alt="Южный Дом"
               className="w-10 h-10 object-contain"
               style={{ mixBlendMode: 'screen' }}
