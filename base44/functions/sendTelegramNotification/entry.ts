@@ -10,7 +10,7 @@ Deno.serve(async (req) => {
     const randomId = Math.floor(Math.random() * 1000000);
 
     const params = new URLSearchParams({
-      user_id: peerId,
+      peer_id: peerId,
       message: text,
       random_id: randomId.toString(),
       access_token: token,
