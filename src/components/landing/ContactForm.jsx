@@ -3,7 +3,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Send, Loader2, CheckCircle, User, Phone, MessageSquare } from 'lucide-react';
-const FUNC_URL = '/functions/sendTelegramNotification';
+const FUNC_URL = 'https://stroy-home-15841246.base44.app/functions/sendTelegramNotification';
 
 export default function ContactForm({ source = 'contacts' }) {
   const [form, setForm] = useState({ name: '', phone: '', message: '' });
