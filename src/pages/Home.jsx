@@ -14,6 +14,10 @@ const heroImage = '/assets/92e85bad2_generated_623b2115.png';
 const aboutImage = '/assets/3a10121c5_generated_70e6ad1f.png';
 
 export default function Home() {
+  React.useEffect(() => {
+    document.title = 'Южный дом';
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Navbar />
