@@ -64,13 +64,6 @@ export default function QuizModal() {
     setLoading(true);
     const summaryLines = steps.map((s) => `${s.question}: ${answers[s.id] || '—'}`).join('\n');
     const message = `Результаты квиза:\n${summaryLines}`;
-    await base44.entities.ContactRequest.create({
-      name: contact.name,
-      phone: contact.phone,
-      message,
-      source: 'consultation',
-      status: 'new',
-    });
     await base44.functions.invoke('sendTelegramNotification', {
       name: contact.name,
       phone: contact.phone,

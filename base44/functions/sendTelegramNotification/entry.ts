@@ -1,6 +1,19 @@
+import { createClientFromRequest } from 'npm:@base44/sdk@0.8.25';
+
 Deno.serve(async (req) => {
   try {
     const { name, phone, message, source } = await req.json();
+
+    const base44 = createClientFromRequest(req);
+
+    // Сохраняем заявку в базу через service role (без авторизации пользователя)
+    await base44.asServiceRole.entities.ContactRequest.create({
+      name,
+      phone,
+      message: message || '',
+      source: source?.startsWith('consultation') ? 'consultation' : (source || 'contacts'),
+      status: 'new',
+    });
 
     const token = Deno.env.get('VK_TOKEN');
     const peerId = Deno.env.get('VK_PEER_ID');
