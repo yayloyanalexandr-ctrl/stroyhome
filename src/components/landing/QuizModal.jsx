@@ -3,7 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronRight, CheckCircle2, Home, Layers, MapPin, Wallet, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { base44 } from '@/api/base44Client';
+import { appParams } from '@/lib/app-params';
+
+const FUNC_URL = `${appParams.appBaseUrl}/functions/sendTelegramNotification`;
 
 const steps = [
   {
@@ -64,11 +66,15 @@ export default function QuizModal() {
     setLoading(true);
     const summaryLines = steps.map((s) => `${s.question}: ${answers[s.id] || '—'}`).join('\n');
     const message = `Результаты квиза:\n${summaryLines}`;
-    await base44.functions.invoke('sendTelegramNotification', {
-      name: contact.name,
-      phone: contact.phone,
-      message,
-      source: 'consultation (квиз)',
+    await fetch(FUNC_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: contact.name,
+        phone: contact.phone,
+        message,
+        source: 'consultation (квиз)',
+      }),
     });
     setLoading(false);
     setDone(true);
