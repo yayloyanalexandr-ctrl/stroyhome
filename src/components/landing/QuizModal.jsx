@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronRight, CheckCircle2, Home, Layers, MapPin, Wallet, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-const FUNC_URL = 'https://stroy-home-15841246.base44.app/functions/sendTelegramNotification';
+import { appParams } from '@/lib/app-params';
+const FUNC_URL = `${appParams.appBaseUrl}/functions/sendTelegramNotification`;
 
 const steps = [
   {
