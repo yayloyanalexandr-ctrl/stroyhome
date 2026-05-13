@@ -3,8 +3,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Send, Loader2, CheckCircle, User, Phone, MessageSquare } from 'lucide-react';
-import { appParams } from '@/lib/app-params';
-const FUNC_URL = `${appParams.appBaseUrl}/functions/sendTelegramNotification`;
+import { base44 } from '@/api/base44Client';
 
 export default function ContactForm({ source = 'contacts' }) {
   const [form, setForm] = useState({ name: '', phone: '', message: '' });
@@ -14,11 +13,7 @@ export default function ContactForm({ source = 'contacts' }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    await fetch(FUNC_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...form, source }),
-    });
+    await base44.functions.invoke('sendTelegramNotification', { ...form, source });
     setLoading(false);
     setSuccess(true);
     setForm({ name: '', phone: '', message: '' });
